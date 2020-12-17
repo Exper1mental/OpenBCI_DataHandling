@@ -31,39 +31,15 @@ def commandLineSetup():
 def main():
     imagefile, imagename = commandLineSetup()
 
-    ### Apple Window
+    ### Image Window
     # ONLY SUPPORTS PNG and GIF. NO JPG SUPPORT.
     img_file = sg.Image(filename=imagefile, size=(3000, 1700), key='-IMAGE-')
-    #img_file = sg.Image(filename="1200px-Apple.png", size=(3000, 1700), key='-IMAGE-')
-    layout = [[img_file], [sg.Button('Show')]]
-                #[[sg.Text("Hello from PySimpleGUI")], [sg.Button("OK")]]
+    layout = [[img_file]]
 
     # Create the window
     window = sg.Window(imagename, layout)
-    #window = sg.Window("Apple", layout)
     event, values = window.read()
     #print(event, values)
-
-    # wait for a period of time
-    #secs = 3
-    #time.sleep(secs)
-
-
-
-    ### Banana Window
-    #window['-IMAGE-'].Update(filename="1200px-Banana.png")
-    #event, values = window.read()
-    # ONLY SUPPORTS PNG and GIF. NO JPG SUPPORT.
-    #layout = [[sg.Image(filename="1200px-Banana.png", size=(3000, 1700))]]
-                #[[sg.Text("Hello from PySimpleGUI")], [sg.Button("OK")]]
-
-    # Create the window
-    #window = sg.Window("Banana", layout)
-
-    # wait for a period of time
-    #secs = 3
-    #time.sleep(secs)
-
 
     # Create an event loop
     while True:
