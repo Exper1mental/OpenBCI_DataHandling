@@ -45,10 +45,7 @@ while plt.fignum_exists(fig.number): #True:
     #print(df_ecg)
     #print("\n")
     #print(ecg)
-
-# Saving Data
-cytonBoard.save_data()
-
+    
 # Stopping Stream
 cytonBoard.stop_stream()
 

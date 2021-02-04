@@ -17,6 +17,8 @@ def scale_magnitude_array(x, ymin, ymax):
 
 def board_2_df(data):
     # data = scale_magnitude_array(data, -396, 433)
+
+    # Could implement tkinder slideshow integration here. May 
     df = pd.DataFrame(data[:, [1, 2, 3, 4, 5, 6, 7, 8, 22]], columns=[
         "EEG ch0",
         "EEG ch1",
@@ -27,7 +29,7 @@ def board_2_df(data):
         "EEG ch6",
         "EEG ch7",
         "TIME"])
-    #print(data)
+    print(df)
     return df
 
 
@@ -45,12 +47,6 @@ class CytonBoard(object):
         self.board.stop_stream()
         self.board.release_session()
 
-    def save_data(self):
-        data = self.board.get_board_data()
-        #DataFilter.write_file (data, '.\Data\cyton_data_new.txt', 'w')
-        # Could add check to see if file already exists, adding a 1, 2, etc. on the end to avoid conflict
-        # Could use date function for generating names based on date-time.
-
     def poll(self, sample_num):
         try:
             while self.board.get_board_data_count() < sample_num:
@@ -59,7 +55,11 @@ class CytonBoard(object):
             raise (e)
         board_data = self.board.get_board_data()
         DataFilter.write_file (board_data, '.\Data\cyton_data_new.txt', 'a') # 'a' appends; 'w' overwrites
+        # Could add check to see if file already exists, adding a 1, 2, etc. on the end to avoid conflict
+        # Could use date function for generating names based on date-time.
         df = board_2_df(np.transpose(board_data))
+        #print('/n')
+        #print(df)
         return df
 
     def sampling_frequency(self):
