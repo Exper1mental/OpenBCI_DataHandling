@@ -8,7 +8,7 @@ import PySimpleGUI as sg
 
 # Importing Data
 file_data = 'OpenBCI-RAW-2020-12-11_13-34-40.txt' #'OpenBCI-RAW Sample.txt'
-#file_data = 'cyton_data.txt'
+file_data = 'processed_data_cyton.txt' #'cyton_data.txt'
 #file_data = 'processed_data-OBCI.txt'
 
 

@@ -65,6 +65,8 @@ def main ():
     print (data[BoardShim.get_other_channels(args.board_id)[0]][-5:]) # should be analog and byte 0xC1
 
     DataFilter.write_file (data, 'cyton_data_new.txt', 'w')
+    # Could add check to see if file already exists, adding a 1, 2, etc. on the end to avoid conflict
+    # Could use date function for generating names based on date-time.
 
 
 if __name__ == "__main__":

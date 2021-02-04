@@ -47,7 +47,7 @@ class gui:
         self.pic_list = []
 
         #THE DIRECTORY WOULD HAVE TO BE CHANGED
-        for name in glob.glob(r'A:\Files\2021\CI Information\Pictures\*'):
+        for name in glob.glob(r'D:\Users\Exper1mental\Clemson Classes\PHYS 3990 Mind Control 3D Printing\Apple and Banana\Pics\*'):
             val = name
             self.pic_list.append(val)
 
